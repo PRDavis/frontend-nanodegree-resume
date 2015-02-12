@@ -79,10 +79,8 @@ var projects = {
 		"dates":"2009-2013",
 		"description":"Trained the world",
 		"images": [
-
-		"http://lorempixel.com/400/200/",
-		"http://lorempixel.com/300/300/"
-
+		"http://lorempixel.com/300/300/food",
+		"http://lorempixel.com/300/300/animals"
 		]
 
 	},
@@ -91,15 +89,32 @@ var projects = {
 		"dates":"2013-2014",
 		"description":"Trained California",
 		"images": [
-
-		"http://lorempixel.com/300/600/",
-		"http://lorempixel.com/150/250/"
-
+		"http://lorempixel.com/400/400/food",
+		"http://lorempixel.com/400/400/animals"
 		]
-
 	}
 	]
 };
+	/*
+project display function goes here:
+*/
+projects.display = function() {
+	for (proj in projects.project){
+		HTMLprojectStart
+		$("#projects").append(HTMLprojectStart);
+		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[proj].title);
+		$("#projects").append(formattedProjectTitle);
+		var formattedProjectDates=HTMLprojectDates.replace("%data%",projects.project[proj].dates);
+		$("#projects").append(formattedProjectDates);
+		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[proj].description);
+		$("#projects").append(formattedProjectDescription);
+		for (images in projects.project[proj].images) {
+			var formattedProjectImage=HTMLprojectImage.replace("%data%",projects.project[proj].images[images]);
+			$("#projects").append(formattedProjectImage);
+		}
+	}
+};
+projects.display();
 //apply styles to header element and display them on the page
 var formattedName = HTMLheaderName.replace("%data%",bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -136,7 +151,6 @@ if (bio.skills.length > 0) {
 a function to format and display the properties of the work object.
 */
 function displayWork(){
-	
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -154,23 +168,14 @@ function displayWork(){
 calls the displayWork function
 */
 displayWork();
-
-
-
-
 //this is the mouse click locator
 $(document).click(function(loc){
 	var x=loc.pageX;
 	var y=loc.pageY;
-
-
 	logClicks(x,y);	
 });
-
-
 //this puts the internationalize button on the page
 $("#main").append(internationalizeButton);
-
 function inName(){
 	var myName=bio.name.split(" ");
 	//take the fist name and make lower case
@@ -188,26 +193,10 @@ function inName(){
 	var myReturnName = firstName + " " + lastName;
 	return myReturnName;
 };
-
-
-
-
-
-
-
-
-
 projects.display = function(){
-
-	console.log("proj.display  1");
-
-
 	for (project in projects){
-
 		HTMLprojectStart
 		$("#projects").append(HTMLprojectStart);
-
-		console.log("proj.display  2");
 		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[project].title);
 		$("#projects").append(formattedProjectTitle);
 		var formattedProjectDates=HTMLprojectDates.replace("%data%",projects.project[project].dates);
@@ -215,55 +204,8 @@ projects.display = function(){
 		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[project].description);
 		$("#projects").append(formattedProjectDescription);
 		for (images in project.images){
-			console.log("proj.display  3");
 			var formattedProjectImage=HTMLprojectImage.replace("%data%",projects.project[project].images[images]);
 			$("#projects").append(formattedProjectImage);
 		}
-
-
-
 	}
-
 };
-
-
-
-//HTMLprojectImage
-
-
-
-
-// var projects = {
-// 	"project":[
-// 	{
-// 		"title":"Project 1",
-// 		"dates":"2009-2013",
-// 		"description":"Trained the world",
-// 		"images": [
-
-// 		"http://lorempixel.com/400/200/",
-// 		"http://lorempixel.com/300/300/"
-
-// 		]
-
-// 	},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
