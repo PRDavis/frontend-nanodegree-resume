@@ -198,14 +198,14 @@ projects.display = function(){
 		HTMLprojectStart
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[project].title);
-		$("#projects").append(formattedProjectTitle);
+		$(".project-entry:last").append(formattedProjectTitle);
 		var formattedProjectDates=HTMLprojectDates.replace("%data%",projects.project[project].dates);
-		$("#projects").append(formattedProjectDates);
+		$(".project-entry:last").append(formattedProjectDates);
 		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[project].description);
-		$("#projects").append(formattedProjectDescription);
+		$(".project-entry:last").append(formattedProjectDescription);
 		for (images in project.images){
 			var formattedProjectImage=HTMLprojectImage.replace("%data%",projects.project[project].images[images]);
-			$("#projects").append(formattedProjectImage);
+			$(".project-entry:last").append(formattedProjectImage);
 		}
 	}
 };
