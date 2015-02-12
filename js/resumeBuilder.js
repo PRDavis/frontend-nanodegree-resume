@@ -171,20 +171,8 @@ $(document).click(function(loc){
 //this puts the internationalize button on the page
 $("#main").append(internationalizeButton);
 
-
-$(document).ready(function() {
-	$("#intButton").click(function(){
-		var formattedName = HTMLheaderName.replace("%data%",inName(bio.name));
-		//$("#header").html(formattedName);
-		var overwrite = $("#header").html().replace(bio.name,formattedName);
-		$("#header").html(overwrite);
-	}); 
-});
-
-
-
-function inName(myInString){
-	var myName=myInString.split(" ");
+function inName(){
+	var myName=bio.name.split(" ");
 	//take the fist name and make lower case
 	var	firstName = myName[0].toLowerCase();
 	//take the first name and slice off the first char
