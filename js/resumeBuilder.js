@@ -61,6 +61,7 @@ var education = {
 	}
 	],
 	"onlineCourses" :[
+	
 	{
 		"title": "Front-End Web Development",
 		"school":"Udacity.com",
@@ -75,32 +76,105 @@ This is the projects object that contains properties of some projects.
 var projects = {
 	"project":[
 	{
-		"title":"Project 1",
-		"dates":"2009-2013",
-		"description":"Trained the world",
+		"title":"DSL Network Operations Training",
+		"dates":"September 2007",
+		"location":"Earth City, MO",
+		"description":"Delivered DSL troubleshooting training",
 		"images": [
-		"http://lorempixel.com/300/300/food",
-		"http://lorempixel.com/300/300/animals"
+		"http://lorempixel.com/100/100/food",
+		"http://lorempixel.com/100/100/animals"
 		]
 
 	},
 	{
-		"title":"Project 2",
-		"dates":"2013-2014",
-		"description":"Trained California",
+		"title":"DSL Network Operations Training",
+		"dates":"March 2009",
+		"location":"Dublin, CA",
+		"description":"Contingency Planning Training",
 		"images": [
-		"http://lorempixel.com/400/400/food",
-		"http://lorempixel.com/400/400/animals"
+		"http://lorempixel.com/100/100/food",
+		"http://lorempixel.com/100/100/animals"
+		]
+	},
+	{
+		"title":"DSL Network Operations Training",
+		"dates":"May 2012, September 2012, February 2013",
+		"location":"San Ramon, CA",
+		"description":"Delivered DSL troubleshooting training",
+		"images": [
+		"http://lorempixel.com/100/100/food",
+		"http://lorempixel.com/100/100/animals"
+		]
+	},
+	{
+		"title":"DSL Network Operations Training",
+		"dates":"May 2012, September 2012, February 2013",
+		"location":"Little Rock, AR",
+		"description":"Delivered DSL troubleshooting training",
+		"images": [
+		"http://lorempixel.com/100/100/food",
+		"http://lorempixel.com/100/100/animals"
 		]
 	}
 	]
 };
+/*
+education display function
+*/
+//HTMLschoolStart
+education.display = function() {
+	for (school in education.schools){
+		
+		$("#education").append(HTMLschoolStart);
+		var formattedSchoolName=HTMLschoolName.replace("%data%",education.schools[school].name);
+		$(".education-entry:last").append(formattedSchoolName);
+
+		var formattedSchoolDegree=HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+		$(".education-entry:last").append(formattedSchoolDegree);
+
+		var formattedSchoolDates=HTMLschoolDates.replace("%data%",education.schools[school].dates);
+		$(".education-entry:last").append(formattedSchoolDates);
+
+
+		var formattedSchoolLocation=HTMLschoolLocation.replace("%data%",education.schools[school].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+
+		HTMLschoolMajor
+		var formattedSchoolMajor=HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+		$(".education-entry:last").append(formattedSchoolMajor);
+	}
+
+	$(".education-entry:last").append(HTMLonlineClasses);
+
+	for (course in education.onlineCourses) {
+		var formattedOnlineTitle=HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
+		$(".education-entry:last").append(formattedOnlineTitle);
+
+
+		var formattedOnlineSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
+		$(".education-entry:last").append(formattedOnlineSchool);
+
+
+		var formattedOnlineDates=HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+		$(".education-entry:last").append(formattedOnlineDates);
+
+
+
+		var formattedOnlineURL=HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
+		$(".education-entry:last").append(formattedOnlineURL);
+	};
+
+}
+;
+
+//call the education display function
+education.display();
 	/*
 project display function goes here:
 */
 projects.display = function() {
 	for (proj in projects.project){
-		HTMLprojectStart
+		
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[proj].title);
 		$("#projects").append(formattedProjectTitle);
@@ -209,3 +283,8 @@ projects.display = function(){
 		}
 	}
 };
+
+
+
+// this is the google map code//
+$("#mapDiv").append(googleMap);
