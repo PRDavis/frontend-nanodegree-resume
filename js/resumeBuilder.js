@@ -15,7 +15,7 @@ var bio = {
 	"skills":[
 	"HTML", "CSS", "JavaScript","Access Networks","Troubleshooting","Technical Training Development and Delivery"
 	],
-	"bioPic":"images/cheetah.jpg"
+	"bioPic":"images/pd02.jpg"
 };
 /*
 This is the work object that contains properties of work history
@@ -48,7 +48,7 @@ var education = {
 		"location":"Morrow, GA",
 		"degree": "none",
 		"majors": "Pre-engineering",
-		"dates":"2011",
+		"dates":"2011-2011",
 		"url":"http://www.clayton.edu"
 	},
 	{
@@ -56,16 +56,28 @@ var education = {
 		"location":"Orange Beach, AL",
 		"degree": "none",
 		"majors": "Information Technology",
-		"dates":"2007",
+		"dates":"2005-2008",
 		"url":"http://www.columbiasouthern.edu/"
 	}
 	],
 	"onlineCourses" :[
 	
 	{
-		"title": "Front-End Web Development",
+		"title": "Introduction to HTML and CSS",
 		"school":"Udacity.com",
-		"dates": "2015",
+		"dates": "2015-2015",
+		"url":"http://www.udacity.com"
+	},
+	{
+		"title": "Version Control",
+		"school":"Udacity.com",
+		"dates": "2015-2015",
+		"url":"http://www.udacity.com"
+	},
+	{
+		"title": "JavaScript Basics",
+		"school":"Udacity.com",
+		"dates": "2015-2015",
 		"url":"http://www.udacity.com"
 	}
 	]
@@ -224,7 +236,7 @@ if (bio.skills.length > 0) {
 /*
 a function to format and display the properties of the work object.
 */
-function displayWork(){
+work.display = function(){
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -238,10 +250,11 @@ function displayWork(){
 		$(".work-entry:last").append(formattedDescription);
 	}
 };
+
 /*
-calls the displayWork function
+calls the work.display function
 */
-displayWork();
+work.display();
 //this is the mouse click locator
 $(document).click(function(loc){
 	var x=loc.pageX;
