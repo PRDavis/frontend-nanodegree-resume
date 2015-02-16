@@ -8,10 +8,10 @@ var bio = {
 		"mobile": "678-409-8327",
 		"email": "paulandcindy@gmail.com",
 		"github": "PRDavis",
-		"twitter": "@johndoe",
+		"twitter": "@paul_davis",
 		"location": "Atlanta"
 	},
-	"welcomeMessage":"Hello and welcome to my resume!",
+	"welcomeMessage":"Hello and thank you for taking time to review my resume! I have over 10 years of telecom network operations management experience. I am looking to branch out into a web development role.",
 	"skills":[
 	"HTML", "CSS", "JavaScript","Access Networks","Troubleshooting","Technical Training Development and Delivery"
 	],
@@ -213,6 +213,7 @@ var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
 var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
 var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 $("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
+$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
 /*
 Format and display the welcome message and the picture.
 */
