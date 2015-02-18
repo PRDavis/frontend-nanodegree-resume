@@ -65,6 +65,15 @@ h2, h3, h4, h5 {
   float: right;
 
 }
+.proj-location-text {
+  font-style: italic;
+  font-size: 16px;
+  color: #112212;
+  line-height: 16px;
+
+
+}
+
 
 p {
   font-size: 14px;
@@ -114,19 +123,63 @@ a {
   background-color: #4A4A4A;
 }
 
-/* TODO: Replace with image later */
 #header {
   background-color: #484848;
 }
-
-.flex-box {
+/*replaced this code - not responsive on ipad or iphone */
+/*.flex-box {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  }*/
+
+  .flex-box {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+
+/*replaced this code to make responsive design work on ios devices  - original looked good in chrome dev tools, 
+but did not actually work on ios devices*/
+
+li.flex-item {
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
+  padding: 20px;
 }
+  /*
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px;
+  flex :auto;
+  }*/
+/*
+span.orange-text {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: 20px;
+}
+
+span.white-text {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px;
+}
+*/
 
 .center-content {
   padding-top: 2.5%;

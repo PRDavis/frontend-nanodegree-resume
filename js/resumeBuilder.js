@@ -11,9 +11,9 @@ var bio = {
 		"twitter": "@paul_davis",
 		"location": "Atlanta"
 	},
-	"welcomeMessage":"Hello and thank you for taking time to review my resume! I have over 10 years of telecom network operations management experience. I am looking to branch out into a web development role.",
+	"welcomeMessage":"Hello and thank you for taking time to review my resume! This is test text. I have over 10 years of telecom network operations management experience. I am looking to branch out into a web development role.",
 	"skills":[
-	"HTML", "CSS", "JavaScript","Access Networks","Troubleshooting","Technical Training Development and Delivery"
+	"HTML", "CSS", "JavaScript","Access Networks","Troubleshooting","Technical Training"
 	],
 	"bioPic":"images/pd02.jpg"
 };
@@ -93,8 +93,7 @@ var projects = {
 		"location":"Earth City, MO",
 		"description":"Delivered DSL troubleshooting training",
 		"images": [
-		"http://lorempixel.com/100/100/food",
-		"http://lorempixel.com/100/100/animals"
+		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=38.758911,-90.454859&fov=90&heading=285&pitch=10"
 		]
 
 	},
@@ -104,8 +103,7 @@ var projects = {
 		"location":"Dublin, CA",
 		"description":"Contingency Planning Training",
 		"images": [
-		"http://lorempixel.com/100/100/food",
-		"http://lorempixel.com/100/100/animals"
+		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=37.710301,-121.888077&fov=90&heading=285&pitch=10"
 		]
 	},
 	{
@@ -114,18 +112,18 @@ var projects = {
 		"location":"San Ramon, CA",
 		"description":"Delivered DSL troubleshooting training",
 		"images": [
-		"http://lorempixel.com/100/100/food",
-		"http://lorempixel.com/100/100/animals"
+		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=37.768732,-121.96526&fov=90&heading=135&pitch=10"
+		
 		]
 	},
 	{
 		"title":"DSL Network Operations Training",
-		"dates":"May 2012, September 2012, February 2013",
+		"dates":"May 2013",
 		"location":"Little Rock, AR",
 		"description":"Delivered DSL troubleshooting training",
 		"images": [
-		"http://lorempixel.com/100/100/food",
-		"http://lorempixel.com/100/100/animals"
+		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=34.741322,-92.272676&fov=90&heading=1&pitch=10"
+		
 		]
 	}
 	]
@@ -190,6 +188,10 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[proj].title);
 		$("#projects").append(formattedProjectTitle);
+
+
+		var formattedProjectLocation=HTMLprojectLocation.replace("%data%",projects.project[proj].location);
+		$("#projects").append(formattedProjectLocation);
 		var formattedProjectDates=HTMLprojectDates.replace("%data%",projects.project[proj].dates);
 		$("#projects").append(formattedProjectDates);
 		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[proj].description);
