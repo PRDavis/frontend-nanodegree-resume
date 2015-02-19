@@ -183,24 +183,27 @@ education.display();
 project display function goes here:
 */
 projects.display = function() {
+	var projectHTMLOutputString="";
+	projectHTMLOutputString=projectHTMLOutputString+HTMLProjectListStart;
 	for (proj in projects.project){
-		
-		$("#projects").append(HTMLprojectStart);
+		projectHTMLOutputString=projectHTMLOutputString+HTMLprojectWrapStart;
+		projectHTMLOutputString=projectHTMLOutputString+HTMLprojectStart;
 		var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.project[proj].title);
-		$("#projects").append(formattedProjectTitle);
-
-
+		projectHTMLOutputString=projectHTMLOutputString+formattedProjectTitle;
 		var formattedProjectLocation=HTMLprojectLocation.replace("%data%",projects.project[proj].location);
-		$("#projects").append(formattedProjectLocation);
+		projectHTMLOutputString=projectHTMLOutputString+formattedProjectLocation;
 		var formattedProjectDates=HTMLprojectDates.replace("%data%",projects.project[proj].dates);
-		$("#projects").append(formattedProjectDates);
+		projectHTMLOutputString=projectHTMLOutputString+formattedProjectDates;
 		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[proj].description);
-		$("#projects").append(formattedProjectDescription);
+		projectHTMLOutputString=projectHTMLOutputString+formattedProjectDescription;
 		for (images in projects.project[proj].images) {
 			var formattedProjectImage=HTMLprojectImage.replace("%data%",projects.project[proj].images[images]);
-			$("#projects").append(formattedProjectImage);
+			projectHTMLOutputString=projectHTMLOutputString+formattedProjectImage;
 		}
+		projectHTMLOutputString=projectHTMLOutputString+HTMLprojectWrapEnd;	
 	}
+	projectHTMLOutputString=projectHTMLOutputString+HTMLProjectListEnd;	
+	$("#projects").append(projectHTMLOutputString);
 };
 projects.display();
 //apply styles to header element and display them on the page
@@ -283,6 +286,8 @@ function inName(){
 	var myReturnName = firstName + " " + lastName;
 	return myReturnName;
 };
+
+/*
 projects.display = function(){
 	for (project in projects){
 		HTMLprojectStart
@@ -299,7 +304,21 @@ projects.display = function(){
 		}
 	}
 };
+*/
 
+
+// this is the google map code//
+$("#mapDiv").append(googleMap);[project].dates);
+		$(".project-entry:last").append(formattedProjectDates);
+		var formattedProjectDescription=HTMLprojectDescription.replace("%data%",projects.project[project].description);
+		$(".project-entry:last").append(formattedProjectDescription);
+		for (images in project.images){
+			var formattedProjectImage=HTMLprojectImage.replace("%data%",projects.project[project].images[images]);
+			$(".project-entry:last").append(formattedProjectImage);
+		}
+	}
+};
+*/
 
 
 // this is the google map code//
