@@ -1,17 +1,28 @@
+
 /*
-This is the bio object that contains properties of the resume's author
+********************************************************
+********************************************************
+********************************************************
+These are the JSON objects that contain the main content
+********************************************************
+********************************************************
+********************************************************
+
+/*
+This is the bio object. It contains the JSON data for the header and footer.
 */
 var bio = {
 	"name": "Paul Davis",
 	"role": "Web Developer",
 	"contacts": {
 		"mobile": "678-409-8327",
+		//"email": '<a href=mailto:paulandcindy@gmail.com>paulandcindy@gmail.com</a>',
 		"email": "paulandcindy@gmail.com",
 		"github": "PRDavis",
 		"twitter": "@paul_davis",
 		"location": "Atlanta"
 	},
-	"welcomeMessage": "Hello and thank you for taking time to review my resume! This is test text. I have over 10 years of telecom network operations management experience. I am looking to branch out into a web development role.",
+	"welcomeMessage": "Hello and thank you for taking time to review my resume! I have over 10 years of telecom network operations management experience. I am looking to branch out into a web development role.",
 	"skills": [
 	"HTML", "CSS", "JavaScript", "Access Networks", "Troubleshooting", "Technical Training"
 	],
@@ -42,14 +53,14 @@ var education = {
 	"schools": [{
 		"name": "Clayton State University",
 		"location": "Morrow, GA",
-		"degree": "none",
+		"degree": "",
 		"majors": "Pre-engineering",
 		"dates": "2011-2011",
 		"url": "http://www.clayton.edu"
 	}, {
 		"name": "Columbia Southern University",
 		"location": "Orange Beach, AL",
-		"degree": "none",
+		"degree": "",
 		"majors": "Information Technology",
 		"dates": "2005-2008",
 		"url": "http://www.columbiasouthern.edu/"
@@ -71,6 +82,11 @@ var education = {
 		"school": "Udacity.com",
 		"dates": "2015-2015",
 		"url": "http://www.udacity.com"
+	}, {
+		"title": "Intro to jQuery",
+		"school": "Udacity.com",
+		"dates": "2015-2015",
+		"url": "http://www.udacity.com"
 	}
 	]
 };
@@ -84,7 +100,7 @@ var projects = {
 		"location": "Atlanta, GA",
 		"description": "Delivered DSL troubleshooting training",
 		"images": [
-		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=33.822469,-84.368551&fov=90&heading=90&pitch=10"
+		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=33.822469,-84.368551&fov=90&heading=1&pitch=15"
 		]
 
 	}, {
@@ -104,6 +120,7 @@ var projects = {
 		"images": [
 		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=37.710301,-121.888077&fov=90&heading=285&pitch=10"
 		]
+
 	}, {
 		"title": "DSL Network Operations Training",
 		"dates": "May 2012, September 2012, February 2013",
@@ -111,8 +128,8 @@ var projects = {
 		"description": "Delivered DSL troubleshooting training",
 		"images": [
 		"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=37.768732,-121.96526&fov=90&heading=135&pitch=10"
-
 		]
+
 	}, {
 		"title": "DSL Network Operations Training",
 		"dates": "May 2013",
@@ -124,10 +141,80 @@ var projects = {
 		]
 	}]
 };
+
+
+/*
+********************************************************
+********************************************************
+********************************************************
+These are the display functions for the JSON objects
+********************************************************
+********************************************************
+********************************************************
+*/
+
+
+/*
+bio.display function displays the biographical, header and 
+footer contact information
+*/
+bio.display = function(){
+	//apply styles to header elements and display them on the page
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+    //apply formatting to contact element and display them on the page
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+    $("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+	/*
+	Format and display the welcome message and the picture.
+	*/
+	var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcome);
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedBioPic);
+	/*
+	Check to see if there are entries in bio.skills,
+	If so, format them and add them to the skills section
+	*/
+	if (bio.skills.length > 0) {
+
+		$("#header").append(HTMLskillsStart);
+
+		for (var skill in bio.skills) {
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkill);
+		}
+	}
+};
+
+/*
+a function to format and display the properties of the work object.
+*/
+work.display = function() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		$(".work-entry:last").append(formattedEmployer + formattedTitle);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedDescription);
+	}
+};
+
 /*
 education display function
 */
-//HTMLschoolStart
 education.display = function() {
 	for (school in education.schools) {
 
@@ -169,12 +256,9 @@ education.display = function() {
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedOnlineURL);
 	};
-
 };
 
-//call the education display function
-education.display();
-	/*
+/*
 project display function goes here:
 */
 projects.display = function() {
@@ -200,68 +284,56 @@ projects.display = function() {
 	projectHTMLOutputString = projectHTMLOutputString + HTMLProjectListEnd;
 	$("#projects").append(projectHTMLOutputString);
 };
-projects.display();
-//apply styles to header element and display them on the page
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-//apply formatting to contact element and display them on the page
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
-$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
-/*
-Format and display the welcome message and the picture.
-*/
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcome);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedBioPic);
-/*
-Check to see if there are entries in bio.skills,
-If so, format them and add them to the skills section
-*/
-if (bio.skills.length > 0) {
 
-	$("#header").append(HTMLskillsStart);
 
-	for (var skill in bio.skills) {
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append(formattedSkill);
-	}
-};
-/*
-a function to format and display the properties of the work object.
-*/
-work.display = function() {
-	for (job in work.jobs) {
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		$(".work-entry:last").append(formattedEmployer + formattedTitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedLocation);
-		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formattedDescription);
-	}
-};
 
 /*
-calls the work.display function
+********************************************************
+********************************************************
+********************************************************
+Call the display functions
+********************************************************
+********************************************************
+********************************************************
 */
+
+
+//display the bio, header and footer content
+bio.display();
+
+//calls the work.display function
 work.display();
+
+//call the education display function
+education.display();
+
+//call the projects display function
+projects.display();
+
+/*
+********************************************************
+********************************************************
+********************************************************
+mouse click locator, internationalize button and map
+********************************************************
+********************************************************
+********************************************************
+*/
+
 //this is the mouse click locator
 $(document).click(function(loc){
 	var x=loc.pageX;
 	var y=loc.pageY;
 	logClicks(x,y);
 });
+
+
+/*places the internationalize button on the page
+when this is clicked the inName function is called to
+format the bioName
+*/
+
+
 //this puts the internationalize button on the page
 $("#main").append(internationalizeButton);
 
@@ -284,5 +356,3 @@ function inName() {
 };
 // this is the google map code//
 $("#mapDiv").append(googleMap);
-
-
