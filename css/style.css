@@ -1,14 +1,8 @@
-/*keep link coloring from changing when clicked*/
-a {
-  color:inherit;
-  text-decoration: none;
-}
-
-
 * {
   padding:0;
   margin:0;
   font-family: 'Roboto', sans-serif;
+  color: #182CB8;
 }
 
 .clearfix {
@@ -22,7 +16,7 @@ a {
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #182CB8;
   line-height: 48px;
   display: inline;
 }
@@ -81,6 +75,10 @@ h2, h3, h4, h5 {
 
 }
 
+.major-text {
+  color: #999999;
+}
+
 
 p {
   font-size: 14px;
@@ -103,22 +101,31 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #182CB8;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #182CB8;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #182CB8;
 }
 
 .white-text {
   font-weight: bold;
   color: #FFFFFF;
 }
+
+.white{
+  color: #ffffff;
+}
+
+
+
+
+
 
 .gray {
   background-color: #F3F3F3;
@@ -127,11 +134,11 @@ a {
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #258FAE;
 }
 
 #header {
-  background-color: #484848;
+  background-color: #258FAE;
 }
 /*replaced this code - not responsive on ipad or iphone */
 /*.flex-box {
@@ -228,6 +235,7 @@ span {
 
 #letsConnect {
   text-align: center;
+  color: #FFFFFF;
 }
 
 @media only screen and (max-width: 1024px) {
