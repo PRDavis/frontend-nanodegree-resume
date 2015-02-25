@@ -331,6 +331,22 @@ THE SOFTWARE.  -->*/
   transition: all 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 }
+nav a:visited {
+  color: white;
+}
+
+nav a:link {
+  color: white;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:active {
+  color: white;
+}
+
 
 .burger:hover { background-color: #258FAE; }
 
