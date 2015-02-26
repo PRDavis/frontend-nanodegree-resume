@@ -162,8 +162,13 @@ a {
 but did not actually work on ios devices*/
 
 li.flex-item {
-  -webkit-flex: 1 0 auto;
-  flex: 1 0 auto;
+  -webkit-flex: 1 0;
+  /* fails validation, on 
+  https://jigsaw.w3.org/css-validator 
+  but makes the layout work*/
+
+  /*code validates on http://codebeautify.org/cssvalidate*/
+  flex: 1 0 auto;  
   padding: 20px;
 }
   /*
@@ -312,7 +317,6 @@ THE SOFTWARE.  -->*/
 
 
 .burger {
-  float: center;
   margin-left: 50%; 
   text-align: center;
   position: relative;
@@ -352,7 +356,6 @@ nav a:active {
 
 .line {
   display: block;
-  float: center;
   position: absolute;
   height: 6px;
   padding: 0px;

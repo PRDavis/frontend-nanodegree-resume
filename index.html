@@ -22,7 +22,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link href="css/style.css" rel="stylesheet" type="text/css">
 
   <!--
@@ -50,7 +50,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 <meta name="viewport" content="width=device-width"> 
 </head>
-<body unresolved>
+<body>
+  <!-- <body unresolved> -->
 
   <!-- *********************************** -->
   <!-- *********************************** -->
@@ -87,9 +88,9 @@ THE SOFTWARE.  -->
   <nav>
     <ul>
       <li><a href="#bio">Bio</a></li>
-      <li><a href="#work">&nbsp&nbsp&nbspWork</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#work">&nbsp;&nbsp;&nbsp;Work</a></li>
+      <li><a href="#proj">Projects</a></li>
+      <li><a href="#educ">Education</a></li>
       <li><a href="#locations">Locations</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -114,23 +115,23 @@ THE SOFTWARE.  -->
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
   -->
-  <a name="bio"></a><div id="header" class="center-content clearfix">
+  <a id="bio"></a><div id="header" class="center-content clearfix">
   <ul id="topContacts" class='flex-box'></ul>
 </div>
 <div style='clear: both;'></div>
-<a name="work"></a><div id="workExperience" class='gray'>
+<a id="work"></a><div id="workExperience" class='gray'>
 <h2>Work Experience</h2>
 </div>
-<a name="projects"></a><div id="projects">
+<a id="proj"></a><div id="projects">
 <h2>Projects</h2>
 </div>
-<a name="education"></a><div id="education" class='gray'>
+<a id="educ"></a><div id="education" class='gray'>
 <h2>Education</h2>
 </div>
-<a name="locations"></a><div id="mapDiv">
+<a id="locations"></a><div id="mapDiv">
 <h2>Where I've Lived and Worked</h2>
 </div>
-<a name="contact"></a><div id="letsConnect" class='dark-gray'>
+<a id="contact"></a><div id="letsConnect" class='dark-gray'>
 <h2 class='orange white-text center-text'>Let's Connect</h2>
 <ul id="footerContacts" class="flex-box">
 </ul>

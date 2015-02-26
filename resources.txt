@@ -1,0 +1,28 @@
+escape character list
+    http://www.theukwebdesigncompany.com/articles/entity-escape-characters.php?PHPSESSID=8cbbddde9a9c9825467546f1c98fe119
+css reference
+    http://www.w3schools.com/
+html reference
+    http://www.echoecho.com/htmllinks08.htm
+number conversion
+    http://www.binaryhexconverter.com/hex-to-decimal-converter
+javascript menu
+    http://www.jqueryscript.net/demo/Morphing-Header-Navigation-with-jQuery-CSS3/
+css reference
+    http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+html reference
+    http://www.w3schools.com/tags/tag_nav.asp
+jQuery menu examples
+    http://www.jqueryscript.net/menu/
+MIT licence 
+    http://opensource.org/licenses/MIT
+pallette ideas
+    http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project
+google map api reference
+    https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
+IFTTT reference
+    https://ifttt.com/
+jQuery reference
+    http://api.jquery.com/
+JavaScript reference
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
