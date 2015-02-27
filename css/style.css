@@ -162,7 +162,7 @@ a {
 but did not actually work on ios devices*/
 
 li.flex-item {
-  -webkit-flex: 1 0;
+  -webkit-flex: 1 0 auto;
   /* fails validation, on 
   https://jigsaw.w3.org/css-validator 
   but makes the layout work*/
@@ -243,7 +243,24 @@ span {
   color: #FFFFFF;
 }
 
+@media only screen and (min-width: 905px) {
+  .burger {
+    margin-left: 50%; 
+  }
+  
+  #letsConnect {
+    margin-top: 5%;
+  }
+}
+
+
+
+
 @media only screen and (max-width: 1024px) {
+  .burger {
+    margin-left: 40%; 
+  }
+  
   #letsConnect {
     margin-top: 5%;
   }
@@ -253,12 +270,19 @@ span {
   .biopic {
     width: 175px;
   }
+  .burger {
+    margin-left: 50%; 
+  }
 }
 
 @media only screen and (max-width: 750px) {
   #letsConnect {
     margin-top: 10%;
   }
+  .burger {
+    margin-left: 40%; 
+  }
+
   .biopic {
     width: 150px;
   }
@@ -317,8 +341,6 @@ THE SOFTWARE.  -->*/
 
 
 .burger {
-  margin-left: 50%; 
-  text-align: center;
   position: relative;
   margin-top: 20px;
   display: inline-block;
